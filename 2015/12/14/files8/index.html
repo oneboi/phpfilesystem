@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>文件下载 | phpfilesystem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#通过超级链接的形式下载文件href:写文件路径就行链接写文件名。如果是文本文件 和图片，浏览器会直接打开。123echo &apos;&amp;lt;a href=&quot;king/55.jpg&quot; target=&quot;_blank&quot;&amp;gt;下载&amp;lt;/a&amp;gt;&apos;点击文件链接下载
+#用程序打开图片文件类型，选择相应的程序输出实际内容
+fopen() fread1234567891011fopen() 函数打开文件或者 U">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件下载">
+<meta property="og:url" content="https://github.com/oneboi/phpfilesystem/2015/12/14/files8/index.html">
+<meta property="og:site_name" content="phpfilesystem">
+<meta property="og:description" content="#通过超级链接的形式下载文件href:写文件路径就行链接写文件名。如果是文本文件 和图片，浏览器会直接打开。123echo &apos;&amp;lt;a href=&quot;king/55.jpg&quot; target=&quot;_blank&quot;&amp;gt;下载&amp;lt;/a&amp;gt;&apos;点击文件链接下载
+#用程序打开图片文件类型，选择相应的程序输出实际内容
+fopen() fread1234567891011fopen() 函数打开文件或者 U">
+<meta property="og:updated_time" content="2015-12-15T09:36:27.191Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文件下载">
+<meta name="twitter:description" content="#通过超级链接的形式下载文件href:写文件路径就行链接写文件名。如果是文本文件 和图片，浏览器会直接打开。123echo &apos;&amp;lt;a href=&quot;king/55.jpg&quot; target=&quot;_blank&quot;&amp;gt;下载&amp;lt;/a&amp;gt;&apos;点击文件链接下载
+#用程序打开图片文件类型，选择相应的程序输出实际内容
+fopen() fread1234567891011fopen() 函数打开文件或者 U">
+  
+    <link rel="alternative" href="/atom.xml" title="phpfilesystem" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/phpfilesystem/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">phpfilesystem</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/oneboi/phpfilesystem"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-files8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/14/files8/" class="article-date">
+  <time datetime="2015-12-14T08:07:28.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      文件下载
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#通过超级链接的形式下载文件<br>href:写文件路径就行链接写文件名。如果是文本文件 和图片，浏览器会直接打开。<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="comment">'<span class="xmlDocTag">&lt;a href="king/55.jpg" target="_blank"&gt;</span>下载<span class="xmlDocTag">&lt;/a&gt;</span>'</span></span><br><span class="line"></span><br><span class="line">点击文件链接下载</span><br></pre></td></tr></table></figure></p>
+<p>#用程序打开图片<br>文件类型，选择相应的程序<br>输出实际内容</p>
+<h1 id="fopen_28_29_fread"><a href="#fopen_28_29_fread" class="headerlink" title="fopen() fread"></a>fopen() fread</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">fopen</span><span class="params">()</span></span> 函数打开文件或者 URL。</span><br><span class="line">如果打开失败，本函数返回 FALSE。</span><br><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">fopen</span><span class="params">(filename,mode,include_path,context)</span></span></span><br><span class="line">义和用法</span><br><span class="line"><span class="function"><span class="title">fread</span><span class="params">()</span></span> 函数读取文件（可安全用于二进制文件）。</span><br><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">fread</span><span class="params">(file,length)</span></span></span><br><span class="line">参数  描述</span><br><span class="line">file    必需。规定要读取打开文件。</span><br><span class="line">length  必需。规定要读取的最大字节数。</span><br></pre></td></tr></table></figure>
+<p>dmeo<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">"Content-type:image/jpg"</span>);文档类型(火狐下必须.搜狗不标准啊)</span><br><span class="line"><span class="variable">$file</span>=fopen(<span class="string">'king/55.jpg'</span>,<span class="string">'r'</span>);</span><br><span class="line">echo fread(<span class="variable">$file</span>,filesize(<span class="string">'king/55.jpg'</span>));数据源，</span><br><span class="line">默认PHP返回的是text/html;</span><br></pre></td></tr></table></figure></p>
+<p>#返回的类型文档类型Content-</p>
+<p>ype<br>word:<br>application/msword 下载<br>PDF文档<br>application/pdf下载<br>视频<br>video/mpeg 下载<br>超文本类型和非超文本类型<br>超文本可以默认输出，特殊的类型必须要指定header(“Content-type:image/jpg”);不然会乱码，输出出来会错。<br>文档类型：mime类型。</p>
+<p>mime类型： 最早出现在邮件<br>mine类型，后来被引入http协议浏览器可以识别更多的文件类型</p>
+<p>我们返回类型，浏览器就可以处理。<br>返回的类型在header函数中设置。<br>大类型/小类型<br>application/pdf下载</p>
+<p>#下载<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">header</span>(<span class="string">"Content-type:image/jpg"</span>);</span><br><span class="line">描述 附件处理</span><br><span class="line"><span class="keyword">header</span>(<span class="string">"content-Disposition:attachment;"</span>);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">"Content-Disposition:attachment;filename=&#123;$fileName&#125;"</span>);</span><br><span class="line">header(<span class="string">"Accept-ranges:bytes"</span>);</span><br><span class="line">header(<span class="string">"Accept-length:"</span>.filesize(<span class="variable">$file</span>));</span><br></pre></td></tr></table></figure>
+<p>#返回二进制<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">header</span>(<span class="string">"Content-type:application/octet-stream"</span>);</span><br><span class="line">浏览器采用他自己分方式</span><br></pre></td></tr></table></figure></p>
+<p>#实现下载<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable">$file</span> = $_GET[<span class="string">'file'</span>];</span><br><span class="line"><span class="keyword">if</span>(file_exists(<span class="variable">$file</span>))&#123;</span><br><span class="line"></span><br><span class="line">header(<span class="string">"Content-type:application/octet-stream"</span>);</span><br><span class="line"><span class="variable">$fileName</span> = basename(<span class="variable">$file</span>);</span><br><span class="line"></span><br><span class="line">header(<span class="string">"Content-Disposition:attachment;filename=&#123;$fileName&#125;"</span>);</span><br><span class="line">header(<span class="string">"Accept-ranges:bytes"</span>); 文件的单位</span><br><span class="line">header(<span class="string">"Accept-length:"</span>.filesize(<span class="variable">$file</span>)); 文件的大小</span><br><span class="line">readfile(<span class="variable">$file</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    echo <span class="string">"文件错误！"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>文件列表，把文件路径传过来<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header<span class="list">(<span class="string">"Content-type:image/png"</span>)</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="string">"Content-Disposition:attachment;filename=logo.png"</span>)</span><span class="comment">;</span></span><br><span class="line">readfile<span class="list">(<span class="quoted">'logo</span>.png')</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/files8/" data-id="cii773bom00022gmk127ypnwj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/phpfilesystem/2015/12/14/files4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          目录操作函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/phpfilesystem/2015/12/14/files3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">文件函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a><span class="tag-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/phpfilesystem/tags/fliesystem/" style="font-size: 10px;">fliesystem</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/phpfilesystem/archives/2015/12/">December 2015</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/email/">email</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/fiels7/">目录操作</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/files6/">查找文件和目录</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/file5/">目录操作</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/14/files4/">目录操作函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 king<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/phpfilesystem/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/phpfilesystem/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/phpfilesystem/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

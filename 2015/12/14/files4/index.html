@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>目录操作函数 | phpfilesystem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#判断目录是否（文件夹）
+is_dir() 函数检查指定的文件是否是一个目录。如果目录存在，该函数返回 TRUE。12345语法is_dir(file)参数  描述file    必需。规定要检查的文件。
+提示和注释注释：该函数的结果会被缓存。请使用 clearstatcache() 来清除缓存。实例1234567891011121314&amp;lt;?php$file = &quot;images&quot;;if(is">
+<meta property="og:type" content="article">
+<meta property="og:title" content="目录操作函数">
+<meta property="og:url" content="https://github.com/oneboi/phpfilesystem/2015/12/14/files4/index.html">
+<meta property="og:site_name" content="phpfilesystem">
+<meta property="og:description" content="#判断目录是否（文件夹）
+is_dir() 函数检查指定的文件是否是一个目录。如果目录存在，该函数返回 TRUE。12345语法is_dir(file)参数  描述file    必需。规定要检查的文件。
+提示和注释注释：该函数的结果会被缓存。请使用 clearstatcache() 来清除缓存。实例1234567891011121314&amp;lt;?php$file = &quot;images&quot;;if(is">
+<meta property="og:updated_time" content="2015-12-15T09:36:17.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="目录操作函数">
+<meta name="twitter:description" content="#判断目录是否（文件夹）
+is_dir() 函数检查指定的文件是否是一个目录。如果目录存在，该函数返回 TRUE。12345语法is_dir(file)参数  描述file    必需。规定要检查的文件。
+提示和注释注释：该函数的结果会被缓存。请使用 clearstatcache() 来清除缓存。实例1234567891011121314&amp;lt;?php$file = &quot;images&quot;;if(is">
+  
+    <link rel="alternative" href="/atom.xml" title="phpfilesystem" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/phpfilesystem/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">phpfilesystem</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/oneboi/phpfilesystem"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-files4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/14/files4/" class="article-date">
+  <time datetime="2015-12-14T08:39:12.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      目录操作函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#判断目录是否（文件夹）</p>
+<p>is_dir() 函数检查指定的文件是否是一个目录。<br>如果目录存在，该函数返回 TRUE。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">is_dir</span><span class="params">(file)</span></span></span><br><span class="line"></span><br><span class="line">参数  描述</span><br><span class="line">file    必需。规定要检查的文件。</span><br></pre></td></tr></table></figure></p>
+<p>提示和注释<br>注释：该函数的结果会被缓存。请使用 clearstatcache() 来清除缓存。<br>实例<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$file</span> = <span class="string">"images"</span>;</span><br><span class="line"><span class="keyword">if</span>(is_dir(<span class="variable">$file</span>))</span><br><span class="line">&#123;</span><br><span class="line">echo (<span class="string">"$file is a directory"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">echo (<span class="string">"$file is not a directory"</span>);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">上面的代码将输出：</span><br><span class="line">images is a directory</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5EFA_u7ACB_u76EE_u5F55_28_u5F88_u91CD_u8981_29"><a href="#u5EFA_u7ACB_u76EE_u5F55_28_u5F88_u91CD_u8981_29" class="headerlink" title="建立目录(很重要)"></a>建立目录(很重要)</h1><p>mkdir() 函数创建目录。<br>如果成功该函数返回 TRUE，如果失败则返回 FALSE。<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line"><span class="built_in">mkdir</span>(<span class="built_in">path</span>,<span class="built_in">mode</span>,recursive,context)</span><br></pre></td></tr></table></figure></p>
+<p>参数  描述<br>path    必需。规定要创建的目录的名称。<br>mode    可选。规定权限。默认是 0777（允许全局访问）。<br>mode 参数由四个数字组成：</p>
+<p>第一个数字通常是 0<br>第二个数字规定所有者的权限<br>第三个数字规定所有者所属的用户组的权限<br>第四个数字规定其他所有人的权限<br>可能的值（如需设置多个权限，请对下面的数字进行总计）：<br>1 = 执行权限<br>2 = 写权限<br>4 = 读权限</p>
+<p>recursive   可选。规定是否设置递归模式。（PHP 5 中新增的）<br>context 可选。规定文件句柄的环境。context 是一套可以修改流的行为的选项。（PHP 5 中新增的）</p>
+<p>提示和注释<br>注释：mode 参数在 Windows 平台上被忽略。<br>实例<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"testing"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">demo2</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"testing"</span>，<span class="number">0777</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">demo3</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"king/file/testing"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">这种错误，需要制定第三个参数，递归建立</span><br><span class="line">demo4</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"king/file/testing"</span>,<span class="number">0777</span> ,<span class="keyword">true</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>文件权限：0777</p>
+<h1 id="u5B9E_u8DF5__uFF0C_u6279_u91CF_u521B_u5EFA_u76EE_u5F55"><a href="#u5B9E_u8DF5__uFF0C_u6279_u91CF_u521B_u5EFA_u76EE_u5F55" class="headerlink" title="实践 ，批量创建目录"></a>实践 ，批量创建目录</h1><h2 id="u591A_u6B21_u8FD0_u7528_u8FD9_u4E2A_u6216_u8005_u4F7F_u7528_u6570_u7EC4_u51FD_u6570"><a href="#u591A_u6B21_u8FD0_u7528_u8FD9_u4E2A_u6216_u8005_u4F7F_u7528_u6570_u7EC4_u51FD_u6570" class="headerlink" title="多次运用这个或者使用数组函数"></a>多次运用这个或者使用数组函数</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dir</span>=<span class="keyword">array</span>(<span class="string">"images"</span>,<span class="string">"html"</span>,<span class="string">"js"</span>);</span><br><span class="line">array_map(mkdir,<span class="variable">$dir</span>);</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.w3school.com.cn/php/func_array_map.asp" target="_blank" rel="external">PHP array_map() 函数</a></p>
+<h1 id="u5F97_u5230_u5F53_u524D_u64CD_u4F5C_u7684_u76EE_u5F55_28_29_u65E0_u53C2_u6570"><a href="#u5F97_u5230_u5F53_u524D_u64CD_u4F5C_u7684_u76EE_u5F55_28_29_u65E0_u53C2_u6570" class="headerlink" title="得到当前操作的目录()无参数"></a>得到当前操作的目录()无参数</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getcwd() 函数返回当前目录。</span><br><span class="line">若成功，则返回当前工作目录，否则返回 false。</span><br><span class="line">语法</span><br><span class="line">getcwd()</span><br><span class="line">例子</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> getcwd();</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">输出：</span><br><span class="line">C:\testweb\main</span><br><span class="line">所有的操作都是针对当前目录</span><br></pre></td></tr></table></figure>
+<p>#更改当前目录<br>定义和用法<br>chdir() 函数把当前的目录改变为指定的目录。<br>若成功，则该函数返回 true，否则返回 false。<br>语法<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">chdir</span><span class="params">(directory)</span></span></span><br><span class="line"></span><br><span class="line">参数  描述</span><br><span class="line">directory   必需。规定新的当前目录。</span><br></pre></td></tr></table></figure></p>
+<p>例子<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="comment">//获得当前目录</span></span><br><span class="line"><span class="keyword">echo</span> getcwd();</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//改变为 images 目录</span></span><br><span class="line">chdir(<span class="string">"images"</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line"><span class="keyword">echo</span> getcwd();</span><br><span class="line"><span class="preprocessor">?&gt;</span></span> </span><br><span class="line">输出：</span><br><span class="line">C:\testweb\main</span><br><span class="line">C:\testweb\main\images</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5220_u9664_u76EE_u5F55_28_u53EA_u5220_u9664_u7A7A_u76EE_u5F55_uFF09_29"><a href="#u5220_u9664_u76EE_u5F55_28_u53EA_u5220_u9664_u7A7A_u76EE_u5F55_uFF09_29" class="headerlink" title="删除目录(只删除空目录）)"></a>删除目录(只删除空目录）)</h1><p>rmdir() 函数删除空的目录。<br>如果成功，该函数返回 TRUE。如果失败，则返回 FALSE。<br>语法<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">rmdir(dir,context)</span><br><span class="line"></span><br><span class="line">dir 必需。规定要删除的目录。</span><br><span class="line">context 可选。规定文件句柄的环境。context 是一套可以修改流的行为的选项。</span><br><span class="line"></span><br><span class="line">实例</span><br><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$path</span> = <span class="string">"images"</span>;</span><br><span class="line"><span class="keyword">if</span>(!rmdir(<span class="variable">$path</span>))</span><br><span class="line">&#123;</span><br><span class="line">echo (<span class="string">"Could not remove $path"</span>);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/files4/" data-id="cii773bot00072gmkdzpl16t3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/phpfilesystem/2015/12/15/file5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          目录操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/phpfilesystem/2015/12/14/files8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">文件下载</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a><span class="tag-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/phpfilesystem/tags/fliesystem/" style="font-size: 10px;">fliesystem</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/phpfilesystem/archives/2015/12/">December 2015</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/email/">email</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/fiels7/">目录操作</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/files6/">查找文件和目录</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/file5/">目录操作</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/14/files4/">目录操作函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 king<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/phpfilesystem/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/phpfilesystem/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/phpfilesystem/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

@@ -61,6 +61,446 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-email" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/15/email/" class="article-date">
+  <time datetime="2015-12-15T07:18:46.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/15/email/">email</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>协议</p>
+<h1 id="ftp_u4E0A_u4F20_u6587_u4EF6"><a href="#ftp_u4E0A_u4F20_u6587_u4EF6" class="headerlink" title="ftp上传文件"></a>ftp上传文件</h1><h1 id="http__u6D4F_u89C8_u7F51_u9875"><a href="#http__u6D4F_u89C8_u7F51_u9875" class="headerlink" title="http 浏览网页"></a>http 浏览网页</h1><h1 id="smtp_u53D1_u9001_u90AE_u4EF6"><a href="#smtp_u53D1_u9001_u90AE_u4EF6" class="headerlink" title="smtp发送邮件"></a>smtp发送邮件</h1><p>自己送信到目的地<br>把信送到自己家邮局，让邮寄代送</p>
+<h1 id="PHP_Mail__u51FD_u6570"><a href="#PHP_Mail__u51FD_u6570" class="headerlink" title="PHP Mail 函数"></a>PHP Mail 函数</h1><p>mail() 函数允许您从脚本中直接发送电子邮件。</p>
+<ul>
+<li>作用： 链接邮件服务器，利用smtp协议，与该服务器交互<br>并投邮件</li>
+<li>注意：1、mail函数不支持esmtp协议，即，只能直投，不能登录<pre><code>2、右上，我们只能直投至最终的收件服务器地址，而该地址，又是在php.ini中指定的。
+</code></pre></li>
+</ul>
+<p>所以：我们想用mail()函数往 xx@qq.com发信的话<br>1：查询QQ邮件服务器的地址<br>2：把改地址写到php.ini里去</p>
+<p>找地址，修ini文件好烦。<br>php,ini<br>SMTP=localhost改为邮件服务器地址。</p>
+<p>Mail 函数的行为受 php.ini 文件中的设置的影响。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PHP+socket编程完成<span class="number">25</span>端口的通信，完成一个邮件类来发送邮件</span><br><span class="line">开远程序phpmail开发</span><br></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/brokge/article/details/7915223" target="_blank" rel="external">参考教程</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/15/email/" data-id="cii773bo700002gmkpwq0wkty" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-fiels7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/15/fiels7/" class="article-date">
+  <time datetime="2015-12-15T03:01:03.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/15/fiels7/">目录操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#获得当前脚本的类</p>
+<p>##返回由当前脚本中已定义类的名字组成的数组。<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">get_declared_classes(<span class="function">)</span></span><br><span class="line">(PHP 4, PHP 5<span class="function">)</span></span><br><span class="line"></span><br><span class="line">get_declared_classes — 返回由已定义类的名字所组成的数组</span><br><span class="line"></span><br><span class="line">说明<span class="instruction"></span><br><span class="line">array </span>get_declared_classes<span class="function"> (</span> void <span class="function">)</span></span><br><span class="line">返回由当前脚本中已定义类的名字组成的数组。</span><br></pre></td></tr></table></figure></p>
+<p>#对象方式操作么目录<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dir</span> =dir(<span class="string">'.'</span>);</span><br><span class="line"><span class="keyword">while</span>((<span class="variable">$file</span> = <span class="variable">$dir-</span>&gt;read())!==FALSE)&#123;</span><br><span class="line">    echo <span class="variable">$file</span>.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$dir-</span>&gt;close();</span><br><span class="line"><span class="variable">$dir-</span>&gt;rewind();</span><br><span class="line">echo <span class="string">"&lt;br/&gt;===========================&lt;br/&gt;"</span>;</span><br><span class="line"><span class="keyword">while</span>((<span class="variable">$file</span> = <span class="variable">$dir-</span>&gt;read())!==FALSE)&#123;</span><br><span class="line">    echo <span class="variable">$file</span>.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;*/</span><br></pre></td></tr></table></figure></p>
+<h1 id="u6587_u4EF6_u5927_u5C0F__u8F93_u51FA_u5B57_u8282_28_u53EA_u53EF_u4EE5_u662F_u6587_u4EF6_u4E0D_u53EF_u4EE5_u662F_u76EE_u5F55_29_u6587_u4EF6_u540D_u4E0D_u53EF_u4EE5_u662F_u4E2D_u6587"><a href="#u6587_u4EF6_u5927_u5C0F__u8F93_u51FA_u5B57_u8282_28_u53EA_u53EF_u4EE5_u662F_u6587_u4EF6_u4E0D_u53EF_u4EE5_u662F_u76EE_u5F55_29_u6587_u4EF6_u540D_u4E0D_u53EF_u4EE5_u662F_u4E2D_u6587" class="headerlink" title="文件大小 输出字节(只可以是文件不可以是目录)文件名不可以是中文"></a>文件大小 输出字节(只可以是文件不可以是目录)文件名不可以是中文</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> filesize(<span class="string">'60/a.txt'</span>)/<span class="number">1024</span>;</span><br></pre></td></tr></table></figure>
+<p>定义和用法<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">filesize() 函数返回指定文件的大小。</span><br><span class="line">若成功，则返回文件大小的字节数。若失败，则返回 false 并生成一条 E_WARNING 级的错误。</span><br><span class="line">语法</span><br><span class="line">filesize(filename)</span><br><span class="line">参数  描述</span><br><span class="line">filename    必需。规定要检查的文件。</span><br><span class="line">提示和注释</span><br><span class="line">提示：本函数的结果会被缓存。请使用 clearstatcache() 来清除缓存。</span><br><span class="line">例子</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> filesize(<span class="string">"test.txt"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">输出：</span><br><span class="line">20</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5220_u9664_u6587_u4EF6"><a href="#u5220_u9664_u6587_u4EF6" class="headerlink" title="删除文件"></a>删除文件</h1><p>unlink(‘king/king.txt’);</p>
+<p>#删除目录 rmdir()</p>
+<p>#删除所有或者指定文件<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array_map<span class="list">(<span class="keyword">unlink</span>, glob<span class="list">('<span class="number">60</span>\<span class="variable">*.doc'));*</span>/</span><br><span class="line">array_map<span class="list">(<span class="keyword">unlink</span>, glob<span class="list">('<span class="number">60</span>\<span class="variable">*.*</span>')</span>)</span><span class="comment">;*/</span></span></span></span><br></pre></td></tr></table></figure></p>
+<p>#总文件夹大小<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> dirSize(<span class="variable">$dirname</span>) &#123;</span><br><span class="line">    <span class="variable">$dir</span> = opendir ( <span class="variable">$dirname</span> );</span><br><span class="line">    while ( (<span class="variable">$file</span> = readdir ( <span class="variable">$dir</span> )) !== FALSE ) &#123;</span><br><span class="line">        <span class="variable">$filename</span> = <span class="variable">$dirname</span> . <span class="string">'\\'</span> . <span class="variable">$file</span>;</span><br><span class="line">        if (<span class="variable">$file</span> != <span class="string">'.'</span> &amp;&amp; <span class="variable">$file</span> != <span class="string">'..'</span>) &#123;</span><br><span class="line">            if (is_dir ( <span class="variable">$file</span> )) &#123;</span><br><span class="line">                <span class="variable">$count</span> += dirSize ( <span class="variable">$file</span> );</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                <span class="variable">$count</span> += filesize ( <span class="variable">$filename</span> );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="variable">$count</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo dirSize ( <span class="string">'.'</span> ) / pow(<span class="number">1024</span>,<span class="number">2</span>);*/</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/15/fiels7/" data-id="cii773bp6000h2gmk2n50bqpk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-files6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/15/files6/" class="article-date">
+  <time datetime="2015-12-15T02:19:43.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/15/files6/">查找文件和目录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="u8FD4_u56DE_u76EE_u5F55_u5185_u5BB9"><a href="#u8FD4_u56DE_u76EE_u5F55_u5185_u5BB9" class="headerlink" title="返回目录内容"></a>返回目录内容</h1><p>glob 以数组形式返回，参数1这个目录的所有内容，可以指定返回的具体类型</p>
+<p>定义和用法<br>glob() 函数返回一个包含匹配指定模式的文件名或目录的数组。<br>该函数返回一个包含有匹配文件/目录的数组。如果失败则返回 FALSE。<br>语法<br><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">glob(pattern,<span class="keyword">flags</span>)</span><br><span class="line"></span><br><span class="line">参数  描述</span><br><span class="line">pattern 必需。规定检索模式。</span><br><span class="line"><span class="keyword">flags</span>   可选。规定特殊的设定。</span><br><span class="line">可能的值：</span><br><span class="line">GLOB_MARK - 在每个返回的项目中加一个斜线</span><br><span class="line">GLOB_NOSORT - 按照文件在目录中出现的原始顺序返回（不排序）</span><br><span class="line">GLOB_NOCHECK - 如果没有文件匹配则返回用于搜索的模式</span><br><span class="line">GLOB_NOESCAPE - 反斜线不转义元字符</span><br><span class="line">GLOB_BRACE - 扩充 <span class="comment">&#123;a,b,c&#125;</span> 来匹配 <span class="string">'a'</span>，<span class="string">'b'</span> 或 <span class="string">'c'</span></span><br><span class="line">GLOB_ONLYDIR - 仅返回与模式匹配的目录项</span><br><span class="line">GLOB_ERR - （PHP <span class="number">5.1</span> 新增的）如果错误则停止，默认情况下忽略所有错误</span><br></pre></td></tr></table></figure></p>
+<p>实例 1<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">print_r(glob(<span class="string">"*.txt"</span>));</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br><span class="line">上面的代码将输出：</span><br><span class="line"><span class="keyword">Array</span></span><br><span class="line">(</span><br><span class="line">[<span class="number">0</span>] =&gt; target.txt</span><br><span class="line">[<span class="number">1</span>] =&gt; source.txt</span><br><span class="line">[<span class="number">2</span>] =&gt; test.txt</span><br><span class="line">[<span class="number">3</span>] =&gt; test2.txt</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">实例 <span class="number">2</span></span><br><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">print_r(glob(<span class="string">"*.*"</span>));</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br><span class="line">上面的代码将输出：</span><br><span class="line"><span class="keyword">Array</span></span><br><span class="line">(</span><br><span class="line">[<span class="number">0</span>] =&gt; contacts.csv</span><br><span class="line">[<span class="number">1</span>] =&gt; <span class="keyword">default</span>.php</span><br><span class="line">[<span class="number">2</span>] =&gt; target.txt</span><br><span class="line">[<span class="number">3</span>] =&gt; source.txt</span><br><span class="line">[<span class="number">4</span>] =&gt; tem1.tmp</span><br><span class="line">[<span class="number">5</span>] =&gt; test.htm</span><br><span class="line">[<span class="number">6</span>] =&gt; test.ini</span><br><span class="line">[<span class="number">7</span>] =&gt; test.php</span><br><span class="line">[<span class="number">8</span>] =&gt; test.txt</span><br><span class="line">[<span class="number">9</span>] =&gt; test2.txt</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>#遍历所有目录<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*<span class="keyword">function</span> globDir(<span class="variable">$dirname</span>,<span class="variable">$type</span>=<span class="string">''</span>)&#123;</span><br><span class="line">    if(<span class="variable">$type</span>==<span class="string">''</span>)&#123;</span><br><span class="line">    <span class="variable">$dirInfo</span> = glob(<span class="variable">$dirname</span>.<span class="string">'/*'</span>);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        <span class="variable">$dirInfo</span> = glob(<span class="variable">$dirname</span>.<span class="string">'/*.'</span>.<span class="variable">$type</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="variable">$dirInfo</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$info</span> = globDir(<span class="string">'.'</span>,<span class="string">'php'</span>);</span><br><span class="line">print_r(<span class="variable">$info</span>);</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*<span class="keyword">function</span> globDir(<span class="variable">$dirname</span>,<span class="variable">$type</span>=<span class="string">''</span>)&#123;</span><br><span class="line"></span><br><span class="line">    if(<span class="variable">$type</span>==<span class="string">''</span>)&#123;</span><br><span class="line">    <span class="variable">$dirInfo</span> = glob(<span class="variable">$dirname</span>.<span class="string">'/*'</span>);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        <span class="variable">$dirInfo</span> = glob(<span class="variable">$dirname</span>.<span class="string">'/*.'</span>.<span class="variable">$type</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    foreach (<span class="variable">$dirInfo</span> as <span class="variable">$v</span>)&#123;</span><br><span class="line">        echo <span class="variable">$v</span>.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        if(is_dir(<span class="variable">$v</span>))&#123;</span><br><span class="line">            globDir(<span class="variable">$v</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">globDir(<span class="string">'.'</span>);*/</span><br></pre></td></tr></table></figure></p>
+<p>#打开目录, 读目录（看里面有什么内容）关掉目录（不观掉会占用资源）</p>
+<p>opendir() 函数打开一个目录句柄，可由 closedir()，readdir() 和 rewinddir() 使用。<br>若成功，则该函数返回一个目录流，否则返回 false 以及一个 error。可以通过在函数名前加上 “@” 来隐藏 error 的输出。<br>语法<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">opendir</span><span class="params">(path,context)</span></span></span><br><span class="line">参数  描述</span><br><span class="line">path    必需。规定要打开的目录路径。</span><br><span class="line">context 可选。规定目录句柄的环境。context 是可修改目录流的行为的一套选项。</span><br></pre></td></tr></table></figure></p>
+<p>例子 1<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//打开 images 目录</span><br><span class="line"><span class="variable">$dir</span> = opendir(<span class="string">"images"</span>);</span><br><span class="line"></span><br><span class="line">//列出 images 目录中的文件</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$file</span> = readdir(<span class="variable">$dir</span>)) !== <span class="literal">false</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  echo <span class="string">"filename: "</span> . <span class="variable">$file</span> . <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  closedir(<span class="variable">$dir</span>);</span><br><span class="line">?&gt; </span><br><span class="line">输出：</span><br><span class="line">filename: .</span><br><span class="line">filename: ..</span><br><span class="line">filename: cat.gif</span><br><span class="line">filename: dog.gif</span><br><span class="line">filename: food</span><br><span class="line">filename: horse.gif</span><br></pre></td></tr></table></figure></p>
+<p>例子 2<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">如果 opendir() 的输出失败，本例会隐藏错误：</span><br><span class="line">&lt;?php</span><br><span class="line">//打开 images 目录</span><br><span class="line"><span class="variable">$dir</span> = @ opendir(<span class="string">"images"</span>);</span><br><span class="line"></span><br><span class="line">//列出 images 目录中的文件</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$file</span> = readdir(<span class="variable">$dir</span>)) !== <span class="literal">false</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  echo <span class="string">"filename: "</span> . <span class="variable">$file</span> . <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  closedir(<span class="variable">$dir</span>);</span><br><span class="line">?&gt; </span><br><span class="line">输出：</span><br><span class="line">filename: .</span><br><span class="line">filename: ..</span><br><span class="line">filename: cat.gif</span><br><span class="line">filename: dog.gif</span><br><span class="line">filename: food</span><br><span class="line">filename: horse.gif</span><br></pre></td></tr></table></figure></p>
+<p>#自己操作<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">返回一个目录流</span><br><span class="line"> <span class="variable">$dir</span>=opendir(<span class="string">'king'</span>);</span><br><span class="line">// 文件指针指向第一个文件</span><br><span class="line"></span><br><span class="line">echo readdir(<span class="variable">$dir</span>);</span><br><span class="line">echo readdir(<span class="variable">$dir</span>);</span><br><span class="line">echo readdir(<span class="variable">$dir</span>);</span><br><span class="line">结果</span><br><span class="line">...king.txt</span><br><span class="line"> ?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>#循环输出<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="variable">$file</span> = readdir(<span class="variable">$dir</span>))&#123;</span><br><span class="line">    echo <span class="variable">$file</span>.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="u8BFB_u76EE_u5F55"><a href="#u8BFB_u76EE_u5F55" class="headerlink" title="读目录"></a>读目录</h1><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readdir(<span class="variable">$dir</span>)</span><br></pre></td></tr></table></figure>
+<p>#关掉额、文件夹，释放资源<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">closedir(<span class="variable">$dir</span>);</span><br></pre></td></tr></table></figure></p>
+<h1 id="u91CD_u7F6E_u76EE_u5F55_u53E5_u67C4"><a href="#u91CD_u7F6E_u76EE_u5F55_u53E5_u67C4" class="headerlink" title="重置目录句柄"></a>重置目录句柄</h1><p>rewinddir() 函数重置由 opendir() 打开的目录句柄。<br>本函数什么都不会返回。<br>语法<br>rewinddir(dir_stream)<br>参数  描述<br>dir_stream  必需。规定要使用的目录句柄。<br>提示和注释<br>提示：本函数重读目录，并可用于检查目录中的变化。<br>例子<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//打开 images 目录</span><br><span class="line"><span class="variable">$dir</span> = opendir(<span class="string">"images"</span>);</span><br><span class="line"></span><br><span class="line">//列出 images 目录中的文件</span><br><span class="line"><span class="keyword">while</span> ((<span class="variable">$file</span> = readdir(<span class="variable">$dir</span>)) !== <span class="literal">false</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  echo <span class="string">"filename: "</span> . <span class="variable">$file</span> . <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">//重置目录流</span><br><span class="line">rewinddir(<span class="variable">$dir</span>);</span><br><span class="line"></span><br><span class="line">//供检查变化的代码</span><br><span class="line"></span><br><span class="line">closedir(<span class="variable">$dir</span>);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/15/files6/" data-id="cii773bor00052gmks2924l72" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-file5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/15/file5/" class="article-date">
+  <time datetime="2015-12-15T01:19:24.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/15/file5/">目录操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#更改目录名字</p>
+<p>rename() 函数重命名文件或目录。<br>如果成功，该函数返回 TRUE。如果失败，则返回 FALSE。<br>语法<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">rename</span>(oldname,newname,<span class="keyword">context</span>)</span><br><span class="line"></span><br><span class="line">参数  描述</span><br><span class="line">oldname 必需。规定要重命名的文件或目录。</span><br><span class="line">newname 必需。规定文件或目录的新名称。</span><br><span class="line"><span class="keyword">context</span> 可选。规定文件句柄的环境。<span class="keyword">context</span> 是一套可以修改流的行为的选项。</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实例</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">rename(<span class="string">"images"</span>,<span class="string">"pictures"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="u626B_u63CF_u76EE_u5F55"><a href="#u626B_u63CF_u76EE_u5F55" class="headerlink" title="扫描目录"></a>扫描目录</h1><p>scandir() 函数返回一个数组，其中包含指定路径中的文件和目录。<br>若成功，则返回一个数组，若失败，则返回 false。如果 directory 不是目录，则返回布尔值 false 并生成一条 E_WARNING 级的错误。<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line">scandir(<span class="built_in">directory</span>,<span class="built_in">sort</span>,context)</span><br><span class="line">参数  描述</span><br><span class="line"><span class="built_in">directory</span>   必需。规定要扫描的目录。</span><br><span class="line"><span class="built_in">sort</span>    可选。规定排列顺序。默认是 <span class="number">0</span> （升序）。如果是 <span class="number">1</span>，则为降序。</span><br><span class="line">context 可选。规定目录句柄的环境。context 是可修改目录流的行为的一套选项。</span><br></pre></td></tr></table></figure></p>
+<p>例子<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">print_r(scandir(<span class="string">"images"</span>));</span><br><span class="line"><span class="preprocessor">?&gt;</span> </span><br><span class="line">输出：</span><br><span class="line"><span class="keyword">Array</span></span><br><span class="line">(</span><br><span class="line">[<span class="number">0</span>] =&gt; .</span><br><span class="line">[<span class="number">1</span>] =&gt; ..</span><br><span class="line">[<span class="number">2</span>] =&gt; dog.jpg</span><br><span class="line">[<span class="number">3</span>] =&gt; house.jpg</span><br><span class="line">[<span class="number">4</span>] =&gt; logo.gif</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<h1 id="u63D2_u5165_u7684_u4F8B_u5B50__u5F97_u5230_u6269_u5C55_u540D_u5B57"><a href="#u63D2_u5165_u7684_u4F8B_u5B50__u5F97_u5230_u6269_u5C55_u540D_u5B57" class="headerlink" title="插入的例子 得到扩展名字"></a>插入的例子 得到扩展名字</h1><p>字符串截取<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$basename</span>=kk.jpg</span><br><span class="line">strstr（<span class="variable">$basename</span>,<span class="string">'.'</span>);=strchr(<span class="variable">$basename</span>,<span class="string">'.'</span>)</span><br><span class="line"><span class="variable">$basename</span>=kk.kk.jpg</span><br><span class="line">strrchr(<span class="variable">$basename</span>,<span class="string">'.'</span>);</span><br></pre></td></tr></table></figure></p>
+<h1 id="u904D_u5386_u6240_u6709_u76EE_u5F55"><a href="#u904D_u5386_u6240_u6709_u76EE_u5F55" class="headerlink" title="遍历所有目录"></a>遍历所有目录</h1><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dir</span>=<span class="string">'.'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> scand(<span class="variable">$dir</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable">$dirInfo</span> = scandir ( <span class="variable">$dir</span> );</span><br><span class="line"></span><br><span class="line">    foreach ( <span class="variable">$dirInfo</span> as <span class="variable">$v</span> ) &#123;</span><br><span class="line">        if (<span class="variable">$v</span> != <span class="string">'.'</span> &amp;&amp; <span class="variable">$v</span> != <span class="string">'..'</span>) &#123;</span><br><span class="line">            <span class="variable">$dirname</span> = <span class="variable">$dir</span> . <span class="string">'\\'</span> . <span class="variable">$v</span>;</span><br><span class="line">            echo <span class="variable">$dirname</span> . <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">            if (is_dir ( <span class="variable">$dirname</span> )) &#123;</span><br><span class="line">            </span><br><span class="line">                scand ( <span class="variable">$dirname</span> );</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">scand(<span class="variable">$dir</span>) ;</span><br></pre></td></tr></table></figure>
+<p>#计算文件文件夹和文件熟练<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">echo strrchr(<span class="variable">$basename</span>, <span class="string">'.'</span>);*/</span><br><span class="line">/*<span class="keyword">function</span> scand(<span class="variable">$dir</span>) &#123;</span><br><span class="line">    static <span class="variable">$i</span> = <span class="number">0</span>;</span><br><span class="line">    static <span class="variable">$d</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="variable">$dirInfo</span> = scandir ( <span class="variable">$dir</span> );</span><br><span class="line">    foreach ( <span class="variable">$dirInfo</span> as <span class="variable">$v</span> ) &#123;</span><br><span class="line">        if (<span class="variable">$v</span> != <span class="string">'.'</span> &amp;&amp; <span class="variable">$v</span> != <span class="string">'..'</span>) &#123;</span><br><span class="line">            <span class="variable">$dirname</span> = <span class="variable">$dir</span> . <span class="string">'\\'</span> . <span class="variable">$v</span>;</span><br><span class="line">            echo <span class="variable">$dirname</span> . <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">            if (is_dir ( <span class="variable">$dirname</span> )) &#123;</span><br><span class="line">                <span class="variable">$count</span> [<span class="string">'dir'</span>] = ++ <span class="variable">$d</span>;</span><br><span class="line">                scand ( <span class="variable">$dirname</span> );</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                <span class="variable">$count</span> [<span class="string">'file'</span>] = ++ <span class="variable">$i</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="variable">$count</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$count</span> = scand ( <span class="string">'.'</span> );</span><br><span class="line">print_r ( <span class="variable">$count</span> );</span><br><span class="line"></span><br><span class="line">echo <span class="string">"&lt;h1&gt;一共有文件&#123;$count['file']&#125;个，文件夹&#123;$count['dir']&#125;个&lt;/h1&gt;"</span>;*/</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/15/file5/" data-id="cii773bp2000f2gmkt31q2lig" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-files4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/14/files4/" class="article-date">
+  <time datetime="2015-12-14T08:39:12.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/14/files4/">目录操作函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#判断目录是否（文件夹）</p>
+<p>is_dir() 函数检查指定的文件是否是一个目录。<br>如果目录存在，该函数返回 TRUE。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">is_dir</span><span class="params">(file)</span></span></span><br><span class="line"></span><br><span class="line">参数  描述</span><br><span class="line">file    必需。规定要检查的文件。</span><br></pre></td></tr></table></figure></p>
+<p>提示和注释<br>注释：该函数的结果会被缓存。请使用 clearstatcache() 来清除缓存。<br>实例<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$file</span> = <span class="string">"images"</span>;</span><br><span class="line"><span class="keyword">if</span>(is_dir(<span class="variable">$file</span>))</span><br><span class="line">&#123;</span><br><span class="line">echo (<span class="string">"$file is a directory"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">echo (<span class="string">"$file is not a directory"</span>);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">上面的代码将输出：</span><br><span class="line">images is a directory</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5EFA_u7ACB_u76EE_u5F55_28_u5F88_u91CD_u8981_29"><a href="#u5EFA_u7ACB_u76EE_u5F55_28_u5F88_u91CD_u8981_29" class="headerlink" title="建立目录(很重要)"></a>建立目录(很重要)</h1><p>mkdir() 函数创建目录。<br>如果成功该函数返回 TRUE，如果失败则返回 FALSE。<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line"><span class="built_in">mkdir</span>(<span class="built_in">path</span>,<span class="built_in">mode</span>,recursive,context)</span><br></pre></td></tr></table></figure></p>
+<p>参数  描述<br>path    必需。规定要创建的目录的名称。<br>mode    可选。规定权限。默认是 0777（允许全局访问）。<br>mode 参数由四个数字组成：</p>
+<p>第一个数字通常是 0<br>第二个数字规定所有者的权限<br>第三个数字规定所有者所属的用户组的权限<br>第四个数字规定其他所有人的权限<br>可能的值（如需设置多个权限，请对下面的数字进行总计）：<br>1 = 执行权限<br>2 = 写权限<br>4 = 读权限</p>
+<p>recursive   可选。规定是否设置递归模式。（PHP 5 中新增的）<br>context 可选。规定文件句柄的环境。context 是一套可以修改流的行为的选项。（PHP 5 中新增的）</p>
+<p>提示和注释<br>注释：mode 参数在 Windows 平台上被忽略。<br>实例<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"testing"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">demo2</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"testing"</span>，<span class="number">0777</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">demo3</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"king/file/testing"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">这种错误，需要制定第三个参数，递归建立</span><br><span class="line">demo4</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line">mkdir(<span class="string">"king/file/testing"</span>,<span class="number">0777</span> ,<span class="keyword">true</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>文件权限：0777</p>
+<h1 id="u5B9E_u8DF5__uFF0C_u6279_u91CF_u521B_u5EFA_u76EE_u5F55"><a href="#u5B9E_u8DF5__uFF0C_u6279_u91CF_u521B_u5EFA_u76EE_u5F55" class="headerlink" title="实践 ，批量创建目录"></a>实践 ，批量创建目录</h1><h2 id="u591A_u6B21_u8FD0_u7528_u8FD9_u4E2A_u6216_u8005_u4F7F_u7528_u6570_u7EC4_u51FD_u6570"><a href="#u591A_u6B21_u8FD0_u7528_u8FD9_u4E2A_u6216_u8005_u4F7F_u7528_u6570_u7EC4_u51FD_u6570" class="headerlink" title="多次运用这个或者使用数组函数"></a>多次运用这个或者使用数组函数</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dir</span>=<span class="keyword">array</span>(<span class="string">"images"</span>,<span class="string">"html"</span>,<span class="string">"js"</span>);</span><br><span class="line">array_map(mkdir,<span class="variable">$dir</span>);</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.w3school.com.cn/php/func_array_map.asp" target="_blank" rel="external">PHP array_map() 函数</a></p>
+<h1 id="u5F97_u5230_u5F53_u524D_u64CD_u4F5C_u7684_u76EE_u5F55_28_29_u65E0_u53C2_u6570"><a href="#u5F97_u5230_u5F53_u524D_u64CD_u4F5C_u7684_u76EE_u5F55_28_29_u65E0_u53C2_u6570" class="headerlink" title="得到当前操作的目录()无参数"></a>得到当前操作的目录()无参数</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getcwd() 函数返回当前目录。</span><br><span class="line">若成功，则返回当前工作目录，否则返回 false。</span><br><span class="line">语法</span><br><span class="line">getcwd()</span><br><span class="line">例子</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> getcwd();</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">输出：</span><br><span class="line">C:\testweb\main</span><br><span class="line">所有的操作都是针对当前目录</span><br></pre></td></tr></table></figure>
+<p>#更改当前目录<br>定义和用法<br>chdir() 函数把当前的目录改变为指定的目录。<br>若成功，则该函数返回 true，否则返回 false。<br>语法<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">chdir</span><span class="params">(directory)</span></span></span><br><span class="line"></span><br><span class="line">参数  描述</span><br><span class="line">directory   必需。规定新的当前目录。</span><br></pre></td></tr></table></figure></p>
+<p>例子<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="comment">//获得当前目录</span></span><br><span class="line"><span class="keyword">echo</span> getcwd();</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//改变为 images 目录</span></span><br><span class="line">chdir(<span class="string">"images"</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line"><span class="keyword">echo</span> getcwd();</span><br><span class="line"><span class="preprocessor">?&gt;</span></span> </span><br><span class="line">输出：</span><br><span class="line">C:\testweb\main</span><br><span class="line">C:\testweb\main\images</span><br></pre></td></tr></table></figure></p>
+<h1 id="u5220_u9664_u76EE_u5F55_28_u53EA_u5220_u9664_u7A7A_u76EE_u5F55_uFF09_29"><a href="#u5220_u9664_u76EE_u5F55_28_u53EA_u5220_u9664_u7A7A_u76EE_u5F55_uFF09_29" class="headerlink" title="删除目录(只删除空目录）)"></a>删除目录(只删除空目录）)</h1><p>rmdir() 函数删除空的目录。<br>如果成功，该函数返回 TRUE。如果失败，则返回 FALSE。<br>语法<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">rmdir(dir,context)</span><br><span class="line"></span><br><span class="line">dir 必需。规定要删除的目录。</span><br><span class="line">context 可选。规定文件句柄的环境。context 是一套可以修改流的行为的选项。</span><br><span class="line"></span><br><span class="line">实例</span><br><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$path</span> = <span class="string">"images"</span>;</span><br><span class="line"><span class="keyword">if</span>(!rmdir(<span class="variable">$path</span>))</span><br><span class="line">&#123;</span><br><span class="line">echo (<span class="string">"Could not remove $path"</span>);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/files4/" data-id="cii773bot00072gmkdzpl16t3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-files8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/14/files8/" class="article-date">
+  <time datetime="2015-12-14T08:07:28.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/14/files8/">文件下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#通过超级链接的形式下载文件<br>href:写文件路径就行链接写文件名。如果是文本文件 和图片，浏览器会直接打开。<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="comment">'<span class="xmlDocTag">&lt;a href="king/55.jpg" target="_blank"&gt;</span>下载<span class="xmlDocTag">&lt;/a&gt;</span>'</span></span><br><span class="line"></span><br><span class="line">点击文件链接下载</span><br></pre></td></tr></table></figure></p>
+<p>#用程序打开图片<br>文件类型，选择相应的程序<br>输出实际内容</p>
+<h1 id="fopen_28_29_fread"><a href="#fopen_28_29_fread" class="headerlink" title="fopen() fread"></a>fopen() fread</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">fopen</span><span class="params">()</span></span> 函数打开文件或者 URL。</span><br><span class="line">如果打开失败，本函数返回 FALSE。</span><br><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">fopen</span><span class="params">(filename,mode,include_path,context)</span></span></span><br><span class="line">义和用法</span><br><span class="line"><span class="function"><span class="title">fread</span><span class="params">()</span></span> 函数读取文件（可安全用于二进制文件）。</span><br><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">fread</span><span class="params">(file,length)</span></span></span><br><span class="line">参数  描述</span><br><span class="line">file    必需。规定要读取打开文件。</span><br><span class="line">length  必需。规定要读取的最大字节数。</span><br></pre></td></tr></table></figure>
+<p>dmeo<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">"Content-type:image/jpg"</span>);文档类型(火狐下必须.搜狗不标准啊)</span><br><span class="line"><span class="variable">$file</span>=fopen(<span class="string">'king/55.jpg'</span>,<span class="string">'r'</span>);</span><br><span class="line">echo fread(<span class="variable">$file</span>,filesize(<span class="string">'king/55.jpg'</span>));数据源，</span><br><span class="line">默认PHP返回的是text/html;</span><br></pre></td></tr></table></figure></p>
+<p>#返回的类型文档类型Content-</p>
+<p>ype<br>word:<br>application/msword 下载<br>PDF文档<br>application/pdf下载<br>视频<br>video/mpeg 下载<br>超文本类型和非超文本类型<br>超文本可以默认输出，特殊的类型必须要指定header(“Content-type:image/jpg”);不然会乱码，输出出来会错。<br>文档类型：mime类型。</p>
+<p>mime类型： 最早出现在邮件<br>mine类型，后来被引入http协议浏览器可以识别更多的文件类型</p>
+<p>我们返回类型，浏览器就可以处理。<br>返回的类型在header函数中设置。<br>大类型/小类型<br>application/pdf下载</p>
+<p>#下载<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">header</span>(<span class="string">"Content-type:image/jpg"</span>);</span><br><span class="line">描述 附件处理</span><br><span class="line"><span class="keyword">header</span>(<span class="string">"content-Disposition:attachment;"</span>);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">"Content-Disposition:attachment;filename=&#123;$fileName&#125;"</span>);</span><br><span class="line">header(<span class="string">"Accept-ranges:bytes"</span>);</span><br><span class="line">header(<span class="string">"Accept-length:"</span>.filesize(<span class="variable">$file</span>));</span><br></pre></td></tr></table></figure>
+<p>#返回二进制<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">header</span>(<span class="string">"Content-type:application/octet-stream"</span>);</span><br><span class="line">浏览器采用他自己分方式</span><br></pre></td></tr></table></figure></p>
+<p>#实现下载<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable">$file</span> = $_GET[<span class="string">'file'</span>];</span><br><span class="line"><span class="keyword">if</span>(file_exists(<span class="variable">$file</span>))&#123;</span><br><span class="line"></span><br><span class="line">header(<span class="string">"Content-type:application/octet-stream"</span>);</span><br><span class="line"><span class="variable">$fileName</span> = basename(<span class="variable">$file</span>);</span><br><span class="line"></span><br><span class="line">header(<span class="string">"Content-Disposition:attachment;filename=&#123;$fileName&#125;"</span>);</span><br><span class="line">header(<span class="string">"Accept-ranges:bytes"</span>); 文件的单位</span><br><span class="line">header(<span class="string">"Accept-length:"</span>.filesize(<span class="variable">$file</span>)); 文件的大小</span><br><span class="line">readfile(<span class="variable">$file</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    echo <span class="string">"文件错误！"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>文件列表，把文件路径传过来<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header<span class="list">(<span class="string">"Content-type:image/png"</span>)</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="string">"Content-Disposition:attachment;filename=logo.png"</span>)</span><span class="comment">;</span></span><br><span class="line">readfile<span class="list">(<span class="quoted">'logo</span>.png')</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/files8/" data-id="cii773bom00022gmk127ypnwj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-files3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/14/files3/" class="article-date">
+  <time datetime="2015-12-14T08:07:28.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/14/files3/">文件函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="u53D8_u91CF_FILE"><a href="#u53D8_u91CF_FILE" class="headerlink" title="变量 FILE"></a>变量 <strong>FILE</strong></h1><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__FILE__</span><br><span class="line">E:<span class="command">\www</span><span class="command">\file</span><span class="command">\index</span>.php</span><br></pre></td></tr></table></figure>
+<p>#文件和目录是否存在</p>
+<p>file_exists() 函数检查文件或目录是否存在。<br>如果指定的文件或目录存在则返回 TRUE，否则返回 FALSE。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">file_exists</span><span class="params">(path)</span></span></span><br><span class="line">参数  描述</span><br><span class="line">path    必需。规定要检查的路径。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">实例</span><br><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> file_exists(<span class="string">"test.txt"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">上面的代码将输出：</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<h1 id="u6587_u4EF6_u7684_u7C7B_u578B"><a href="#u6587_u4EF6_u7684_u7C7B_u578B" class="headerlink" title="文件的类型"></a>文件的类型</h1><p>filetype(filename)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> filetype(<span class="string">"test.txt"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">上面的代码将输出：</span><br><span class="line">file</span><br></pre></td></tr></table></figure></p>
+<p>注释：该函数的结果会被缓存。请使用 clearstatcache() 来清除缓存。</p>
+<h1 id="u6587_u4EF6_u540D_u5B57"><a href="#u6587_u4EF6_u540D_u5B57" class="headerlink" title="文件名字"></a>文件名字</h1><p>字符串的方式<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strrchr</span>() 函数查找字符串在另一个字符串中最后一次出现的位置，并返回从该位置到字符串结尾的所有字符。</span><br><span class="line"><span class="built_in">strrchr</span>(<span class="built_in">string</span>,<span class="keyword">char</span>)</span><br><span class="line">参数  描述</span><br><span class="line"><span class="built_in">string</span>  必需。规定要搜索的字符串。</span><br><span class="line"><span class="keyword">char</span>    必需。规定要查找的字符。如果该参数是数字，则搜索匹配此数字的 ASCII 值的字符。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> trim(strrchr( <span class="keyword">__FILE__</span>,<span class="string">"\\"</span> ),<span class="string">"\\"</span>);</span><br><span class="line">在linux中不好为/ ，在windoes中为\换成一个常量</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在PHP中完成一项功能有<span class="keyword">n</span>多种方式。</span><br></pre></td></tr></table></figure>
+<p>文件函数方式<br>basename()<br>定义和用法<br>basename() 函数返回路径中的文件名部分。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line"><span class="function"><span class="title">basename</span><span class="params">(path,suffix)</span></span></span><br><span class="line"></span><br><span class="line">参数  描述</span><br><span class="line">path    必需。规定要检查的路径。</span><br><span class="line">suffix  可选。规定文件扩展名。如果文件有名有文件扩展名，将不会显示这个扩展名。</span><br></pre></td></tr></table></figure></p>
+<p>实例<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$path</span> = <span class="string">"/testweb/home.php"</span>;</span><br><span class="line"></span><br><span class="line">//Show filename with file extension</span><br><span class="line">echo basename(<span class="variable">$path</span>) .<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line"></span><br><span class="line">//Show filename without file extension</span><br><span class="line">echo basename(<span class="variable">$path</span>,<span class="string">".php"</span>);</span><br><span class="line">?&gt;</span><br><span class="line">上面的代码将输出：</span><br><span class="line">home.php</span><br><span class="line">home</span><br></pre></td></tr></table></figure></p>
+<p>#文件路径目录<br>定义和用法 dirname() 函数返回路径中的目录名称部分。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语法 <span class="function"><span class="title">dirname</span><span class="params">(path)</span></span></span><br><span class="line">path   必需。规定要检查的路径。</span><br></pre></td></tr></table></figure></p>
+<p>实例<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> dirname(<span class="string">"c:/testweb/home.php"</span>) . <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line"><span class="keyword">echo</span> dirname(<span class="string">"/testweb/home.php"</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br><span class="line">上面的代码将输出：</span><br><span class="line">c:/testweb</span><br><span class="line">/testweb</span><br></pre></td></tr></table></figure></p>
+<p>#总结：</p>
+<p>文件是否存在，存在的话文件的类型是什么？ 文件的路径是什么，文件的名字是什么？</p>
+<h2 id="u600E_u4E48_u83B7_u5F97_u6269_u5C55_u540D_u5B57_uFF1F"><a href="#u600E_u4E48_u83B7_u5F97_u6269_u5C55_u540D_u5B57_uFF1F" class="headerlink" title="怎么获得扩展名字？"></a>怎么获得扩展名字？</h2><h2 id="u600E_u4E48_u5B9A_u4E49_u6839_u76EE_u5F55_uFF1F"><a href="#u600E_u4E48_u5B9A_u4E49_u6839_u76EE_u5F55_uFF1F" class="headerlink" title="怎么定义根目录？"></a>怎么定义根目录？</h2><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">config.php</span><br><span class="line"></span><br><span class="line"><span class="keyword">dirname</span>(__FILE__);</span><br><span class="line">diranme(<span class="keyword">dirname</span>());</span><br><span class="line">把它定位常量</span><br><span class="line">define（<span class="string">'ROOT'</span>,<span class="keyword">dirname</span>(__FILE__))</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/files3/" data-id="cii773bov00092gmksaejxt56" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-files2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/14/files2/" class="article-date">
+  <time datetime="2015-12-14T07:54:51.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/14/files2/">磁盘空间（disk)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="u6587_u4EF6_u5939_u5C42_u7EA7_u5173_u7CFB"><a href="#u6587_u4EF6_u5939_u5C42_u7EA7_u5173_u7CFB" class="headerlink" title="文件夹层级关系"></a>文件夹层级关系</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.当前目录</span><br><span class="line">上级目录</span><br></pre></td></tr></table></figure>
+<h1 id="u78C1_u76D8_u603B_u7A7A_u95F4"><a href="#u78C1_u76D8_u603B_u7A7A_u95F4" class="headerlink" title="磁盘总空间"></a>磁盘总空间</h1><p>disk_total_space()  返回一个目录的磁盘总容量。<br>diskfreespace() disk_free_space() 的别名。<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">参数为目录：<span class="built_in">directory</span>为字符串</span><br><span class="line"><span class="built_in">directory</span>   必需。规定要检查的目录。</span><br><span class="line">（<span class="string">'.'</span>)</span><br><span class="line">(<span class="string">"C:"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="u53EF_u7528_u7528_u7A7A_u95F4"><a href="#u53EF_u7528_u7528_u7A7A_u95F4" class="headerlink" title="可用用空间"></a>可用用空间</h1><p>disk_free_space()   返回目录的可用空间。</p>
+<p>#code:注意单位和转换<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$totalSpace</span> = round(disk_total_space(<span class="string">'.'</span>)/pow(<span class="number">1024</span>,<span class="number">3</span>),<span class="number">2</span>).<span class="string">'G'</span>;</span><br><span class="line"><span class="variable">$freeSpace</span> = round(disk_free_space(<span class="string">'/'</span>)/pow(<span class="number">1024</span>,<span class="number">3</span>),<span class="number">2</span>);</span><br><span class="line">echo <span class="string">"已用空间："</span>.(<span class="variable">$totalSpace-</span><span class="variable">$freeSpace</span>);*/</span><br></pre></td></tr></table></figure></p>
+<h1 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h1><p>本节主要就是关于磁盘，（电脑硬盘）的容量计算 磁盘总量 磁盘可用的空间</p>
+<p>注意点： 函数的参数都为字符串形式。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/files2/" data-id="cii773boy000b2gmkvxzpflru" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-files1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/phpfilesystem/2015/12/14/files1/" class="article-date">
+  <time datetime="2015-12-14T07:49:11.000Z" itemprop="datePublished">2015-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/phpfilesystem/2015/12/14/files1/">文件系统目录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文件系统涉及 </p>
+<ol>
+<li>磁盘空间</li>
+<li>文件</li>
+<li>文件夹</li>
+<li>文件组</li>
+<li>文件权限</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/files1/" data-id="cii773bp1000d2gmkabyjfj06" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/phpfilesystem/2015/12/14/hello-world/" class="article-date">
@@ -96,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/hello-world/" data-id="cii5j88mx0000usmkg5pmnudo" class="article-share-link">Share</a>
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/hello-world/" data-id="cii773bok00012gmkenbg393d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,14 +554,28 @@
     
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/phpfilesystem/tags/fliesystem/">fliesystem</a><span class="tag-list-count">8</span></li></ul>
+    </div>
+  </div>
+
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/phpfilesystem/tags/fliesystem/" style="font-size: 10px;">fliesystem</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/phpfilesystem/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/phpfilesystem/archives/2015/12/">December 2015</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -133,7 +587,23 @@
       <ul>
         
           <li>
-            <a href="/phpfilesystem/2015/12/14/hello-world/">Hello World</a>
+            <a href="/phpfilesystem/2015/12/15/email/">email</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/fiels7/">目录操作</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/files6/">查找文件和目录</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/15/file5/">目录操作</a>
+          </li>
+        
+          <li>
+            <a href="/phpfilesystem/2015/12/14/files4/">目录操作函数</a>
           </li>
         
       </ul>

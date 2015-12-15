@@ -3,21 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | phpfilesystem</title>
+  <title>email | phpfilesystem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="协议
+ftp上传文件http 浏览网页smtp发送邮件自己送信到目的地把信送到自己家邮局，让邮寄代送
+PHP Mail 函数mail() 函数允许您从脚本中直接发送电子邮件。
+
+作用： 链接邮件服务器，利用smtp协议，与该服务器交互并投邮件
+注意：1、mail函数不支持esmtp协议，即，只能直投，不能登录2、右上，我们只能直投至最终的收件服务器地址，而该地址，又是在php.ini中指定的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://github.com/oneboi/phpfilesystem/2015/12/14/hello-world/index.html">
+<meta property="og:title" content="email">
+<meta property="og:url" content="https://github.com/oneboi/phpfilesystem/2015/12/15/email/index.html">
 <meta property="og:site_name" content="phpfilesystem">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-12-14T02:26:28.921Z">
+<meta property="og:description" content="协议
+ftp上传文件http 浏览网页smtp发送邮件自己送信到目的地把信送到自己家邮局，让邮寄代送
+PHP Mail 函数mail() 函数允许您从脚本中直接发送电子邮件。
+
+作用： 链接邮件服务器，利用smtp协议，与该服务器交互并投邮件
+注意：1、mail函数不支持esmtp协议，即，只能直投，不能登录2、右上，我们只能直投至最终的收件服务器地址，而该地址，又是在php.ini中指定的。">
+<meta property="og:updated_time" content="2015-12-15T09:35:35.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="email">
+<meta name="twitter:description" content="协议
+ftp上传文件http 浏览网页smtp发送邮件自己送信到目的地把信送到自己家邮局，让邮寄代送
+PHP Mail 函数mail() 函数允许您从脚本中直接发送电子邮件。
+
+作用： 链接邮件服务器，利用smtp协议，与该服务器交互并投邮件
+注意：1、mail函数不支持esmtp协议，即，只能直投，不能登录2、右上，我们只能直投至最终的收件服务器地址，而该地址，又是在php.ini中指定的。">
   
     <link rel="alternative" href="/atom.xml" title="phpfilesystem" type="application/atom+xml">
   
@@ -63,10 +75,10 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-email" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/phpfilesystem/2015/12/14/hello-world/" class="article-date">
-  <time datetime="2015-12-14T02:26:28.921Z" itemprop="datePublished">2015-12-14</time>
+    <a href="/phpfilesystem/2015/12/15/email/" class="article-date">
+  <time datetime="2015-12-15T07:18:46.000Z" itemprop="datePublished">2015-12-15</time>
 </a>
     
   </div>
@@ -77,7 +89,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      email
     </h1>
   
 
@@ -85,20 +97,24 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>协议</p>
+<h1 id="ftp_u4E0A_u4F20_u6587_u4EF6"><a href="#ftp_u4E0A_u4F20_u6587_u4EF6" class="headerlink" title="ftp上传文件"></a>ftp上传文件</h1><h1 id="http__u6D4F_u89C8_u7F51_u9875"><a href="#http__u6D4F_u89C8_u7F51_u9875" class="headerlink" title="http 浏览网页"></a>http 浏览网页</h1><h1 id="smtp_u53D1_u9001_u90AE_u4EF6"><a href="#smtp_u53D1_u9001_u90AE_u4EF6" class="headerlink" title="smtp发送邮件"></a>smtp发送邮件</h1><p>自己送信到目的地<br>把信送到自己家邮局，让邮寄代送</p>
+<h1 id="PHP_Mail__u51FD_u6570"><a href="#PHP_Mail__u51FD_u6570" class="headerlink" title="PHP Mail 函数"></a>PHP Mail 函数</h1><p>mail() 函数允许您从脚本中直接发送电子邮件。</p>
+<ul>
+<li>作用： 链接邮件服务器，利用smtp协议，与该服务器交互<br>并投邮件</li>
+<li>注意：1、mail函数不支持esmtp协议，即，只能直投，不能登录<pre><code>2、右上，我们只能直投至最终的收件服务器地址，而该地址，又是在php.ini中指定的。
+</code></pre></li>
+</ul>
+<p>所以：我们想用mail()函数往 xx@qq.com发信的话<br>1：查询QQ邮件服务器的地址<br>2：把改地址写到php.ini里去</p>
+<p>找地址，修ini文件好烦。<br>php,ini<br>SMTP=localhost改为邮件服务器地址。</p>
+<p>Mail 函数的行为受 php.ini 文件中的设置的影响。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PHP+socket编程完成<span class="number">25</span>端口的通信，完成一个邮件类来发送邮件</span><br><span class="line">开远程序phpmail开发</span><br></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/brokge/article/details/7915223" target="_blank" rel="external">参考教程</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/14/hello-world/" data-id="cii773bok00012gmkenbg393d" class="article-share-link">Share</a>
+      <a data-url="https://github.com/oneboi/phpfilesystem/2015/12/15/email/" data-id="cii773bo700002gmkpwq0wkty" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,15 +123,11 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/phpfilesystem/2015/12/14/files1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          文件系统目录
-        
-      </div>
-    </a>
   
+    <a href="/phpfilesystem/2015/12/15/fiels7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">目录操作</div>
+    </a>
   
 </nav>
 
